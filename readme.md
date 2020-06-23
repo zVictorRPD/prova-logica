@@ -15,7 +15,7 @@ Usando como base o arquivo base.csv realize as seguintes tarefas:
 
 2 - Crie um programa que reordene o arquivo pela coluna X do arquivo, usando bubblesort
 
-3 - Preencha o endereco no arquivo lendo a coluna de cep e buscando na API viacep o endereço
+3 - Preencha o endereco no arquivo lendo a coluna de cep e buscando na API viacep (https://viacep.com.br/) o endereço equivalente ao CEP.
 
 ## Resultado
 Estrutura da solução (PASTAS):
