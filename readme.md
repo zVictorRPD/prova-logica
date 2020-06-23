@@ -19,12 +19,14 @@ Usando como base o arquivo base.csv realize as seguintes tarefas:
 
 ## Resultado
 Estrutura da solução (PASTAS):
+```
     TAREFA1
         Program.cs (ou arquivos da linguagem escolhida)
     TAREFA2
         Program.cs (ou arquivos da linguagem escolhida)        
     TAREFA3
         Program.cs (ou arquivos da linguagem escolhida)
+```
 
 O que avaliamos:
 
