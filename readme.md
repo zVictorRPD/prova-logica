@@ -4,7 +4,7 @@
 
 Este é um teste que aplicamos na seleção de novos estagiários.
 
-Faça um fork desse repositório e acrescente o código. Crie uma pasta para cada solução. Depois disso nos passe o endereço para verificação.
+Faça um fork desse repositório e acrescente o código. Crie uma pasta para cada solução. Depois disso nos passe o endereço do seu repositório no github para verificação.
 
 Você pode utilizar as seguintes linguagens pra resolução dos problemas: CSharp (preferencial), Node, Java, Javascript, C ou Python
 
