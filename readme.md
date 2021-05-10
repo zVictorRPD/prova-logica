@@ -1,4 +1,4 @@
-# Teste prático - Estágio
+# Teste prático - Estágio - v2
 
 ## Introdução
 
@@ -12,11 +12,12 @@ Você pode utilizar as seguintes linguagens pra resolução dos problemas: CShar
 
 Realize as seguintes tarefas:
 
-1 - Crie um programa que multiplique a coluna _"População no último censo"_ do arquivo _"mapa.csv"_ por 2 e grave uma cópia do arquivo alterado.
+1 - Crie um programa que formate a coluna _"População no último censo"_ do arquivo _"mapa.csv"_ e grave uma cópia do arquivo alterado. Formate com 0 casas decimais e separador de milhar.
+Ex.: 90000 => 90.000
 
-2 - Crie um programa que reordene o arquivo _"mapa.csv"_ pela coluna _"População no último censo"_ do arquivo, usando bubblesort, e grave uma cópia do arquivo alterado.
+2 - Crie um programa que ordene em ordem decrescente o arquivo _"mapa.csv"_ pela coluna _"População no último censo"_ do arquivo, usando o algoritmo bubblesort, e grave uma cópia do arquivo alterado.
 
-3 - Preencha o endereco no arquivo _"CEPs.csv"_ lendo a coluna de cep e buscando na API viacep (https://viacep.com.br/) o endereço equivalente ao CEP e grave uma cópia do arquivo preenchido.
+3 - Preencha o endereco no arquivo _"CEPs.csv"_ lendo a coluna de cep e buscando na API viacep (https://viacep.com.br/) a cidade e o bairro equivalente ao CEP e grave uma cópia do arquivo preenchido.
 
 ## Resultado
 
