@@ -1,4 +1,4 @@
-# Teste prático - Estágio - v2
+# Teste prático - Lógica Básica - v2
 
 ## Introdução
 
