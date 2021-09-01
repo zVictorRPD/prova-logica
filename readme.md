@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Este é um teste que aplicamos na seleção de novos estagiários.
+Este é um teste que aplicamos na seleção de novos estagiários ou programadores Jr.
 
 Faça um fork desse repositório e acrescente o código. Crie uma pasta para cada solução. Depois disso nos passe o endereço do seu repositório no github para verificação.
 
