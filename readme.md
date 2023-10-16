@@ -1,4 +1,4 @@
-# Teste prático - Lógica Básica - v2
+# Teste prático - Lógica Básica - v3
 
 ## Introdução
 
@@ -6,18 +6,21 @@ Este é um teste que aplicamos na seleção de novos estagiários ou programador
 
 Faça um fork desse repositório e acrescente o código. Crie uma pasta para cada solução. Depois disso nos passe o endereço do seu repositório no github para verificação.
 
-Você pode utilizar as seguintes linguagens pra resolução dos problemas: CSharp (preferencial), Node, Java, Javascript, C ou Python
+Você pode utilizar as seguintes linguagens pra resolução dos problemas: CSharp, Golang Node, Java, Javascript, C ou Python. Se for possível tente utilizar a linguagem da vaga em questão.
 
 ## Escopo
 
 Realize as seguintes tarefas:
 
-1 - Crie um programa que formate a coluna _"População no último censo"_ do arquivo _"mapa.csv"_ e grave uma cópia do arquivo alterado. Formate com 0 casas decimais e separador de milhar.
-Ex.: 90000 => 90.000
+1 - Crie um programa que formate a coluna _"População no último censo"_ do arquivo _"mapa.csv"_ e grave uma cópia do arquivo alterado. Acrescente uma coluna IDH com um valor decimal, randomico ehtre 0.5 e 0.9 para cada cidade. Formate o resultado dividindo por 1000 com 1 casa decimal:
+Ex.: 90000 => "90,0 mil"
 
 2 - Crie um programa que ordene em ordem decrescente o arquivo _"mapa.csv"_ pela coluna _"População no último censo"_ do arquivo, usando o algoritmo bubblesort, e grave uma cópia do arquivo alterado.
 
-3 - Preencha o endereco no arquivo _"CEPs.csv"_ lendo a coluna de cep e buscando na API viacep (https://viacep.com.br/) a cidade e o bairro equivalente ao CEP e grave uma cópia do arquivo preenchido.
+3 - Preencha o endereco no arquivo _"CEPs.csv"_ lendo a coluna de cep e buscando na API viacep (https://viacep.com.br/) a cidade, bairro e logradouro equivalente ao CEP e grave uma cópia do arquivo preenchido.
+
+4 - Bonus
+    Escreva teste de unidades para pelo menos uma tarefa.
 
 ## Resultado
 
