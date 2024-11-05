@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Este é um teste que aplicamos na seleção de novos estagiários ou programadores Jr.
+Este é um teste que aplicamos na seleção de programadores Jr.
 
 Faça um fork desse repositório e acrescente o código. Crie uma pasta para cada solução. Depois disso nos passe o endereço do seu repositório no github para verificação.
 
@@ -15,12 +15,11 @@ Realize as seguintes tarefas:
 1 - Crie um programa que formate a coluna _"População no último censo"_ do arquivo _"mapa.csv"_ e grave uma cópia do arquivo alterado. Acrescente uma coluna IDH com um valor decimal, randomico ehtre 0.5 e 0.9 para cada cidade. Formate o resultado dividindo por 1000 com 1 casa decimal:
 Ex.: 90000 => "90,0 mil"
 
-2 - Crie um programa que ordene em ordem decrescente o arquivo _"mapa.csv"_ pela coluna _"População no último censo"_ do arquivo, usando o algoritmo bubblesort, e grave uma cópia do arquivo alterado.
+2 - Crie um programa que ordene em ordem decrescente o arquivo _"mapa.csv"_ pela coluna _"População no último censo"_ do arquivo, usando o algoritmo bubblesort, e grave uma cópia do arquivo alterado. O arquivo deve conter as 10 maiores populações apenas.
 
-3 - Preencha o endereco no arquivo _"CEPs.csv"_ lendo a coluna de cep e buscando na API viacep (https://viacep.com.br/) a cidade, bairro e logradouro equivalente ao CEP e grave uma cópia do arquivo preenchido.
+3 - Preencha o endereco no arquivo _"CEPs.csv"_ lendo a coluna de cep e buscando na API viacep (https://viacep.com.br/) a cidade, bairro e logradouro equivalente ao CEP e grave uma cópia do arquivo preenchido. Faça as busca de 5 em 5 ceps em paralelo e grave o resultado ordenado pelo CEP.
 
-4 - Bonus
-    Escreva teste de unidades para pelo menos uma tarefa.
+4 - Escreva teste de unidades para pelo menos uma das tarefas.
 
 ## Resultado
 
