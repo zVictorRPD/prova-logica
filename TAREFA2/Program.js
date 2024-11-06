@@ -17,16 +17,6 @@ class CSVParser {
         return value.replace(/["\r]/g, "");
     }
 
-    // Método para gerar um número aleatório para o IDH
-    generateRandomIDH() {
-        return (Math.random() * 0.4 + 0.5).toFixed(1);
-    }
-
-    // Método para formatar a população
-    formatPopulation(population) {
-        return (population / 1000).toFixed(1).replace('.', ',') + " mil";
-    }
-
     // Utilizado para normalizar os dados do arquivo e salvar em um array
     processFile() {
         const fileContent = this.readFile();
@@ -44,36 +34,41 @@ class CSVParser {
             if (name && !isNaN(population)) {
                 this.lines.push({
                     name,
-                    population: this.formatPopulation(population),
+                    population,
                 });
             }
         });
     }
 
-    // Inserindo a nova coluna de IDH
-    addIDHColumn() {
-        this.headers.push("IDH");
-        this.lines = this.lines.map((line) => {
-            return {
-                ...line,
-                IDH: this.generateRandomIDH(),
-            };
-        });
+    // Método para ordernar a população 
+    sortPopulation() {
+        for (let i = 0; i < this.lines.length; i++) {
+            for (let j = 0; j < this.lines.length - 1 - i; j++) {
+                if (this.lines[j].population < this.lines[j + 1].population) {
+                    const temp = this.lines[j];
+                    this.lines[j] = this.lines[j + 1];
+                    this.lines[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    getTop10() {
+        return this.lines.slice(0, 10);
     }
 
     // Método para salvar os dados em um arquivo
     saveToFile() {
         const data = this.getData();
         const formattedData = [data.headers.map((header) => `"${header}"`).join("; ")];
-        console.log(formattedData);
-        
-        data.lines.forEach((line) => {
-            const formattedLine = `"${line.name}"; "${line.population}"; ${line.IDH}`;
+        const top_10 = this.getTop10();
+        top_10.forEach((line) => {
+            const formattedLine = `"${line.name}"; ${line.population}`;
             formattedData.push(formattedLine);
         });
 
         const fileContent = formattedData.join("\n");
-        writeFileSync("./TAREFA1/mapa_formatado.csv", fileContent);
+        writeFileSync("./TAREFA2/mapa_ordenado.csv", fileContent);
     }
 
     // Retorna os dados
@@ -87,5 +82,5 @@ class CSVParser {
 
 const parser = new CSVParser("mapa.csv");
 parser.processFile();
-parser.addIDHColumn();
+parser.sortPopulation();
 parser.saveToFile();
