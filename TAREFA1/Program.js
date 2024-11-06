@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 
 class CSVParser {
     constructor(filePath) {
@@ -17,9 +17,14 @@ class CSVParser {
         return value.replace(/["\r]/g, "");
     }
 
-    // Função para gerar um número aleatório para o IDH
+    // Método para gerar um número aleatório para o IDH
     generateRandomIDH() {
         return (Math.random() * 0.4 + 0.5).toFixed(1);
+    }
+
+    // Método para formatar a população
+    formatPopulation(population) {
+        return (population / 1000).toFixed(1).replace('.', ',') + " mil";
     }
 
     // Utilizado para normalizar os dados do arquivo e salvar em um array
@@ -39,7 +44,7 @@ class CSVParser {
             if (name && !isNaN(population)) {
                 this.lines.push({
                     name,
-                    population,
+                    population: this.formatPopulation(population),
                 });
             }
         });
@@ -56,6 +61,21 @@ class CSVParser {
         });
     }
 
+    // Método para salvar os dados em um arquivo
+    saveToFile() {
+        const data = this.getData();
+        const formattedData = [data.headers.map((header) => `"${header}"`).join("; ")];
+        console.log(formattedData);
+        
+        data.lines.forEach((line) => {
+            const formattedLine = `"${line.name}"; "${line.population}"; ${line.IDH}`;
+            formattedData.push(formattedLine);
+        });
+
+        const fileContent = formattedData.join("\n");
+        writeFileSync("mapa_formatado.csv", fileContent);
+    }
+
     // Retorna os dados
     getData() {
         return {
@@ -68,5 +88,4 @@ class CSVParser {
 const parser = new CSVParser("mapa.csv");
 parser.processFile();
 parser.addIDHColumn();
-const data = parser.getData();
-console.log(data);
+parser.saveToFile();
