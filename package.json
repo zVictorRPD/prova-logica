@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "Desafio TG4",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "tarefa1": "node TAREFA1/Program.js",
+    "tarefa2": "node TAREFA2/Program.js",
+    "tarefa3": "node TAREFA3/Program.js",
+    "test1": "node --experimental-vm-modules node_modules/jest/bin/jest.js TAREFA1/Program.test.js",
+    "test2": "node --experimental-vm-modules node_modules/jest/bin/jest.js TAREFA2/Program.test.js",
+    "test3": "node --experimental-vm-modules node_modules/jest/bin/jest.js TAREFA3/Program.test.js"
   },
   "author": "",
   "license": "ISC",
