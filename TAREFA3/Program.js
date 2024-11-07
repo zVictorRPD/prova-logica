@@ -90,6 +90,7 @@ export class CSVParser {
                     );
                     if(!response.ok) throw new Error("Erro ao buscar CEP");
                     const data = await response.json();
+                    if(data.erro) throw new Error("CEP não encontrado");
                     this.updateLine({
                         cep: zipcode,
                         logradouro: data.logradouro,
