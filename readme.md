@@ -1,50 +1,60 @@
 # Teste prático - Lógica Básica - v4
 
-## Introdução
+Teste de lógica para programadores Jr. proposto pela TG4 desenvolvido utilizando JavaScript
 
-Este é um teste que aplicamos na seleção de programadores Jr.
+### Bibliotecas instaladas
 
-Faça um fork desse repositório e acrescente o código. Crie uma pasta para cada solução. Depois disso nos passe o endereço do seu repositório no github para verificação.
+- jest v29.7.0
 
-Você pode utilizar as seguintes linguagens pra resolução dos problemas: CSharp, Golang Node, Java, Javascript, C ou Python. Se for possível tente utilizar a linguagem da vaga em questão.
+## Estrutura do projeto
 
-## Escopo
-
-Realize as seguintes tarefas:
-
-1 - Crie um programa que formate a coluna _"População no último censo"_ do arquivo _"mapa.csv"_ e grave uma cópia do arquivo alterado. Acrescente uma coluna IDH com um valor decimal, randomico ehtre 0.5 e 0.9 para cada cidade. Formate o resultado dividindo por 1000 com 1 casa decimal:
-Ex.: 90000 => "90,0 mil"
-
-2 - Crie um programa que ordene em ordem decrescente o arquivo _"mapa.csv"_ pela coluna _"População no último censo"_ do arquivo, usando o algoritmo bubblesort, e grave uma cópia do arquivo alterado. O arquivo deve conter as 10 maiores populações apenas.
-
-3 - Preencha o endereco no arquivo _"CEPs.csv"_ lendo a coluna de cep e buscando na API viacep (https://viacep.com.br/) a cidade, bairro e logradouro equivalente ao CEP e grave uma cópia do arquivo preenchido. Faça as busca de 5 em 5 ceps em paralelo e grave o resultado ordenado pelo CEP.
-
-4 - Escreva teste de unidades para pelo menos uma das tarefas.
-
-## Resultado
-
-Estrutura da solução (PASTAS):
-
-```
-    TAREFA1
-        Program.cs (ou arquivos da linguagem escolhida)
-    TAREFA2
-        Program.cs (ou arquivos da linguagem escolhida)
-    TAREFA3
-        Program.cs (ou arquivos da linguagem escolhida)
+```markdown
+├── TAREFA1/
+│   ├── mapa_formatado.csv             # Arquivo gerado após tratativa     
+│   ├── Program.js                     # Arquivo com a lógica da tarefa
+│   └── Program.test.js                # Arquivo com a lógica de testes     
+├── TAREFA1/
+│   ├── mapa_ordenado.csv                     
+│   ├── Program.js                     
+│   └── Program.test.js 
+└── TAREFA1/
+    ├── CEPs_complementados.csv                     
+    ├── Program.js                     
+    └── Program.test.js 
 ```
 
-O que avaliamos:
+## Comandos de execução
 
-- Qualidade de código
-- Código limpo
-- Simplicidade
-- Lógica de programação
-- Conceitos de orientação a objetos
-- Otimização do código implementado
-- Organização e padrão de Commits
+Clone o projeto
 
-## Dúvidas
+```bash
+  git clone https://gitlab.com/zVictorRPD/desafio-vox.git
+```
 
-Fique a vontade para nos procurar, o RH vai mandar o contato para dúvidas
-Nos diga o que achou do teste
+Entre no diretório do projeto
+
+```bash
+  cd prova-logica
+```
+
+Instale as dependências
+
+```bash
+  npm install
+```
+
+Inicie a tarefa desejada (tarefa1, tarefa2 ou tarefa3)
+
+```bash
+  npm run tarefa1
+```
+
+Inicie o teste desejado (test1, test2 ou test3)
+
+```bash
+  npm run test1
+```
+
+## Observações
+
+No arquivo de CEPs.csv existe o código "4711130" que está faltando um número, ao colocar 0 na primeira posição encontrei um CEP válido e bem similar aos outros, porém, como não sei se é proposital ou não, resolvi deixar dessa forma e apenas tratar o erro.
