@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
 
-class CSVParser {
+export class CSVParser {
     constructor(filePath) {
         this.filePath = filePath;
         this.headers = [];
@@ -58,8 +58,8 @@ class CSVParser {
         return this.lines.slice(0, 10);
     }
 
-    // Método para salvar os dados em um arquivo
-    saveToFile() {
+    // Formatar os dados para salvar no arquivo
+    formatDataToFile() {
         const data = this.getData();
         const formattedData = [data.headers.map((header) => `"${header}"`).join("; ")];
         const top_10 = this.getTop10();
@@ -67,8 +67,13 @@ class CSVParser {
             const formattedLine = `"${line.name}"; ${line.population}`;
             formattedData.push(formattedLine);
         });
-
         const fileContent = formattedData.join("\n");
+        return fileContent;
+    }
+
+    // Método para salvar os dados em um arquivo
+    saveToFile() {
+        const fileContent = this.formatDataToFile();
         writeFileSync("./TAREFA2/mapa_ordenado.csv", fileContent);
     }
 

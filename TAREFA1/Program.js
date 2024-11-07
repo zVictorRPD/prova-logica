@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
 
-class CSVParser {
+export class CSVParser {
     constructor(filePath) {
         this.filePath = filePath;
         this.headers = [];
@@ -61,16 +61,21 @@ class CSVParser {
         });
     }
 
-    // Método para salvar os dados em um arquivo
-    saveToFile() {
+    // Formatar os dados para salvar no arquivo
+    formatDataToFile() {
         const data = this.getData();
         const formattedData = [data.headers.map((header) => `"${header}"`).join("; ")];
         data.lines.forEach((line) => {
             const formattedLine = `"${line.name}"; "${line.population}"; ${line.IDH}`;
             formattedData.push(formattedLine);
         });
-
         const fileContent = formattedData.join("\n");
+        return fileContent;
+    }
+
+    // Método para salvar os dados em um arquivo
+    saveToFile() {
+        const fileContent = this.formatDataToFile();
         writeFileSync("./TAREFA1/mapa_formatado.csv", fileContent);
     }
 

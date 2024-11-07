@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from "node:fs";
 
-class CSVParser {
+export class CSVParser {
     constructor(filePath) {
         this.filePath = filePath;
         this.headers = [];
@@ -126,19 +126,17 @@ class CSVParser {
         await Promise.all(allPromises);
     }
 
-    // Método para salvar os dados em um arquivo
-    saveToFile() {
+    // Formatar os dados para salvar no arquivo
+    formatDataToFile() {
         const data = this.getData();
-        const formattedData = [
-            data.headers.map((header) => `"${header}"`).join("; "),
-        ];
-        this.lines.forEach((line) => {
+        const formattedData = [data.headers.map((header) => `"${header}"`).join("; ")];
+        data.lines.forEach((line) => {
             const formattedLine = [
                 `"${line.cep}"`,
                 `"${line.logradouro}"`,
                 `"${line.complemento}"`,
                 `"${line.bairro}"`,
-                `"${line.localidade}"`,
+                `"${line.localidade}"`, 
                 `"${line.uf}"`,
                 `"${line.unidade}"`,
                 `"${line.ibge}"`,
@@ -148,6 +146,12 @@ class CSVParser {
         });
 
         const fileContent = formattedData.join("\n");
+        return fileContent;
+    }
+    
+    // Método para salvar os dados em um arquivo
+    saveToFile() {
+        const fileContent = this.formatDataToFile();
         writeFileSync("./TAREFA3/CEPs_completados.csv", fileContent);
     }
 
