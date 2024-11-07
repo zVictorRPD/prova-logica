@@ -2,7 +2,13 @@
   "name": "prova-logica",
   "version": "1.0.0",
   "description": "Desafio TG4",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
