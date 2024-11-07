@@ -23,7 +23,7 @@ class CSVParser {
 
         fileContent.split("\n").forEach((line, index) => {
             if (index === 0) {
-                this.headers = line.split("; ").map(this.regexToFormatString);
+                this.headers = line.split(";").map(header => this.regexToFormatString(header).trim());
                 return;
             }
 
@@ -53,6 +53,7 @@ class CSVParser {
         }
     }
 
+    // Retorna os 10 primeiros elementos
     getTop10() {
         return this.lines.slice(0, 10);
     }

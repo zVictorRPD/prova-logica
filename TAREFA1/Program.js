@@ -33,7 +33,7 @@ class CSVParser {
 
         fileContent.split("\n").forEach((line, index) => {
             if (index === 0) {
-                this.headers = line.split("; ").map(this.regexToFormatString);
+                this.headers = line.split(";").map(header => this.regexToFormatString(header).trim());
                 return;
             }
 
@@ -65,8 +65,6 @@ class CSVParser {
     saveToFile() {
         const data = this.getData();
         const formattedData = [data.headers.map((header) => `"${header}"`).join("; ")];
-        console.log(formattedData);
-        
         data.lines.forEach((line) => {
             const formattedLine = `"${line.name}"; "${line.population}"; ${line.IDH}`;
             formattedData.push(formattedLine);
