@@ -28,7 +28,7 @@ Teste de lógica para programadores Jr. proposto pela TG4 desenvolvido utilizand
 Clone o projeto
 
 ```bash
-  git clone https://gitlab.com/zVictorRPD/desafio-vox.git
+  git clone https://github.com/zVictorRPD/prova-logica.git
 ```
 
 Entre no diretório do projeto
